@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cobalt: #0a47ed;
+  --color-cobalt-dark: #0838bd;
+  --color-cyan: #00c0f0;
+  --color-ink: #0f172a;
+  --color-surface: #faf8ff;
+  --color-surface-2: #f2f3ff;
+  --color-container: #eaedff;
+  --color-container-hi: #e2e7ff;
+  --color-teal: #006782;
+  --color-mint: #006a48;
+  --color-slate-panel: #283044;
+  --color-line: #e2e8f0;
+  --color-ok: #10b981;
+  --color-alert: #ef4444;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.02);
+}
+
+.tnum { font-feature-settings: "tnum" on, "zero" on; }
+
+:focus-visible { outline: 2px solid var(--color-cyan); outline-offset: 2px; }
+
+/* Slow LED-style blink for the diagnostic beacon dots */
+@keyframes led-blink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px 2px var(--led); }
+  50% { opacity: 0.25; box-shadow: 0 0 0 0 var(--led); }
+}
+.led-dot {
+  animation: led-blink 2.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .led-dot { animation: none; }
 }

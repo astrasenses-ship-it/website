@@ -53,7 +53,7 @@ export default function Page() {
         </div>
       </Section>
       <Section id="add-sensor" tone="surface">
-        <div className="card flex flex-col gap-6 p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
+        <div className="card p-6 sm:p-8">
           <div className="max-w-2xl">
             <Eyebrow>Adding a new sensor?</Eyebrow>
             <h2 className="mt-3 text-2xl font-bold sm:text-3xl">Scan the QR code on your sensor in the app</h2>
@@ -64,7 +64,6 @@ export default function Page() {
             </ol>
             <p className="mt-3 text-sm text-slate-500">A normal camera app can only open this page. Adding the sensor happens inside the ASTRA IoT Hub app.</p>
           </div>
-          <div className="shrink-0"><PlayStoreButton /></div>
         </div>
       </Section>
       <Section tone="surface">

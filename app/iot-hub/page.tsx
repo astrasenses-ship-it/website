@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { QrLanding } from "@/components/QrLanding";
 import { Check, Eyebrow, PageHero, PlayStoreButton, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ const GALLERY = ["01", "04", "06", "07", "09", "10"];
 export default function Page() {
   return (
     <>
+      <QrLanding />
       <PageHero eyebrow="Mobile telemetry" title="ASTRA IoT Hub">
         Every sensor in your facility, live in your pocket — with the alarms and audit exports to match.
       </PageHero>
@@ -48,6 +50,21 @@ export default function Page() {
             <ul className="mt-6 space-y-3">{FEATURES.map((f) => <Check key={f}>{f}</Check>)}</ul>
             <div className="mt-8"><PlayStoreButton /></div>
           </div>
+        </div>
+      </Section>
+      <Section id="add-sensor" tone="surface">
+        <div className="card flex flex-col gap-6 p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <Eyebrow>Adding a new sensor?</Eyebrow>
+            <h2 className="mt-3 text-2xl font-bold sm:text-3xl">Scan the QR code on your sensor in the app</h2>
+            <ol className="mt-4 space-y-2 text-slate-600">
+              <li><strong className="text-ink">1.</strong> Install the ASTRA IoT Hub app from Google Play.</li>
+              <li><strong className="text-ink">2.</strong> Open the app and scan the QR code on your ASTRA sensor.</li>
+              <li><strong className="text-ink">3.</strong> The app recognises the device and adds it to your account.</li>
+            </ol>
+            <p className="mt-3 text-sm text-slate-500">A normal camera app can only open this page. Adding the sensor happens inside the ASTRA IoT Hub app.</p>
+          </div>
+          <div className="shrink-0"><PlayStoreButton /></div>
         </div>
       </Section>
       <Section tone="surface">

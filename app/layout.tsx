@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | ASTRA e - Automation",
   },
   description:
-    "Full-spectrum IoT design, firmware engineering, mobile telemetry and cloud infrastructure from Bengaluru. Makers of ASTRA Atmos, ThermoProb and the ASTRA IoT Hub app.",
+    "Full-spectrum IoT design, firmware engineering, mobile telemetry and cloud infrastructure from Bengaluru. Makers of ASTRA Atmos, ThermoProbe and the ASTRA IoT Hub app.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

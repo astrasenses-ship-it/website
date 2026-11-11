@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <PageHero eyebrow="Contact" title="Let’s engineer your product.">
-        Tell us about your idea, or ask about Atmos and ThermoProb.
+        Tell us about your idea, or ask about Atmos and ThermoProbe.
       </PageHero>
       <Section>
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">

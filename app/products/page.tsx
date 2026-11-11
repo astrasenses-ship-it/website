@@ -5,7 +5,7 @@ import { Badge, Check, Eyebrow, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "ASTRA Atmos and ThermoProb: rugged dual-channel wireless temperature and humidity sensors.",
+  description: "ASTRA Atmos and ThermoProbe: rugged dual-channel wireless temperature and humidity sensors.",
 };
 
 const COMMON = [
@@ -31,7 +31,7 @@ const PRODUCTS = [
     img: "/img/atmos.jpg",
   },
   {
-    name: "ASTRA ThermoProb",
+    name: "ASTRA ThermoProbe",
     sub: "Precision Wireless RTD Probe Sensor",
     form: "Compact enclosure paired with an industrial high-grade stainless steel RTD external probe.",
     best: "Walk-in chillers, deep-freeze chambers, blast freezers, cold rooms, and immersion tanks.",

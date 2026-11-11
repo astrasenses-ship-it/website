@@ -40,7 +40,7 @@ export function ContactForm() {
           <option>Firmware Development</option>
           <option>Mobile App Development</option>
           <option>IoT Cloud & MQTT</option>
-          <option>Atmos / ThermoProb sensors</option>
+          <option>Atmos / ThermoProbe sensors</option>
           <option>Turnkey OEM / ODM</option>
         </select>
       </label>

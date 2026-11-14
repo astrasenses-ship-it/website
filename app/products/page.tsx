@@ -5,7 +5,7 @@ import { Badge, Check, Eyebrow, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "ASTRA Atmos and ThermoProbe: rugged dual-channel wireless temperature and humidity sensors.",
+  description: "ASTRA Atmos, ThermoProbe-Analog and ThermoProbe-Digital: wireless temperature and humidity sensors.",
 };
 
 const COMMON = [
@@ -18,12 +18,17 @@ const COMMON = [
 const PRODUCTS = [
   {
     name: "ASTRA Atmos",
+    kind: "Ambient sensor",
     sub: "Ambient Wireless Temperature & Humidity Sensor",
     form: "Minimalist white injection-molded enclosure with ventilation louvers and status RGB LED.",
     best: "Pre-cooling chambers, packing halls, clinical tissue culture labs, and clean rooms.",
     specs: [
-      "Dual-channel measurement",
-      "-40 °C to +80 °C operational accuracy (sensor element rated -40 °C to +125 °C) & 0% to 100% RH",
+      "Dual-channel measurement: relative humidity and temperature",
+      "Temperature range -40 °C to +80 °C, typical accuracy ±0.5 °C",
+      "Humidity range 0% to 100% RH, typical accuracy ±3% RH",
+      "Fully calibrated digital output over I²C",
+      "Wide supply voltage: 2.2 V to 5.5 V DC",
+      "Excellent long-term stability, fast response and anti-interference capability",
       "32-bit RISC-V SoC",
       "Automatic condensation recovery heating pulse",
       "1 °C and 3% RH alert hysteresis",
@@ -31,15 +36,32 @@ const PRODUCTS = [
     img: "/img/atmos.jpg",
   },
   {
-    name: "ASTRA ThermoProbe",
+    name: "ASTRA ThermoProbe-Analog",
+    kind: "Probe sensor · Analog",
     sub: "Precision Wireless RTD Probe Sensor",
     form: "Compact enclosure paired with an industrial high-grade stainless steel RTD external probe.",
     best: "Walk-in chillers, deep-freeze chambers, blast freezers, cold rooms, and immersion tanks.",
     specs: [
-      "Ultra-wide temperature measurement from -50 °C up to +300 °C (-50 °C to +150 °C standard POST validation)",
+      "Precise temperature readings across a range of -70 °C to +300 °C",
       "Precision SPI interface",
       "Built-in Power-On Self-Test (POST)",
       "Continuous deep-sleep power cycle",
+    ],
+    img: "/img/thermoprob.jpg",
+  },
+  {
+    name: "ASTRA ThermoProbe-Digital",
+    kind: "Probe sensor · Digital",
+    sub: "Digital Wireless Temperature & Humidity Probe Sensor",
+    form: "Compact enclosure paired with a 2 in × 6 mm digital probe on a 1 m cable.",
+    best: "Chillers, cold rooms and storage areas that run within 5 °C to 60 °C and 20% to 80% RH.",
+    specs: [
+      "Dual-channel measurement: temperature and humidity",
+      "Temperature range -10 °C to +70 °C, accuracy ±0.2 °C",
+      "Humidity range 0% to 100% RH, accuracy ±1.8% RH",
+      "I2C digital interface (address 0x44)",
+      "Operating voltage 1.08 V to 3.6 V DC (typical 3.3 V)",
+      "Recommended operating range 5 °C to 60 °C and 20% to 80% RH",
     ],
     img: "/img/thermoprob.jpg",
   },
@@ -114,12 +136,12 @@ export default function Page() {
         <ul className="mt-5 grid gap-x-10 gap-y-3 md:grid-cols-2">
           {COMMON.map((c) => <Check key={c}>{c}</Check>)}
         </ul>
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {PRODUCTS.map((p) => (
             <article key={p.name} className="card overflow-hidden">
-              <div className="relative aspect-[16/9] bg-container"><Image src={p.img} alt={`${p.name} wireless sensor`} fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover" /></div>
+              <div className="relative aspect-[16/9] bg-container"><Image src={p.img} alt={`${p.name} wireless sensor`} fill sizes="(min-width:1024px) 33vw, 100vw" className="object-cover" /></div>
               <div className="p-6 sm:p-8">
-                <Badge>Connected</Badge>
+                <div className="flex flex-wrap items-center gap-2"><Badge>Connected</Badge><span className="text-xs font-semibold uppercase tracking-widest text-slate-500">{p.kind}</span></div>
                 <h3 className="mt-3 text-2xl font-bold">{p.name}</h3>
                 <p className="text-sm font-medium text-cobalt">{p.sub}</p>
                 <dl className="mt-5 space-y-4 text-sm leading-6">

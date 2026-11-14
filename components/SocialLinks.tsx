@@ -30,19 +30,18 @@ function SocialIcon({ label }: { label: string }) {
 export function SocialLinks({ onDark = false, list = false }: { onDark?: boolean; list?: boolean }) {
   if (list) {
     return (
-      <ul className="grid grid-flow-col grid-rows-3 gap-x-8 gap-y-3">
+      <ul className="flex flex-wrap gap-3">
         {SOCIALS.map((s) => (
           <li key={s.label}>
             <a
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-3 text-sm transition-colors ${onDark ? "hover:text-cyan" : "hover:text-cobalt"}`}
+              aria-label={s.label}
+              title={s.label}
+              className={`flex h-11 w-11 items-center justify-center rounded-full border transition-colors ${onDark ? "border-slate-700 hover:border-cyan hover:text-cyan" : "border-line hover:border-cobalt hover:text-cobalt"}`}
             >
-              <span className={`flex h-8 w-8 items-center justify-center rounded-full border ${onDark ? "border-slate-700" : "border-line"}`}>
-                <SocialIcon label={s.label} />
-              </span>
-              {s.label}
+              <SocialIcon label={s.label} />
             </a>
           </li>
         ))}

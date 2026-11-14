@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logo } from "./Logo";
 import { SocialLinks } from "./SocialLinks";
 import { CONTACT, NAV } from "@/lib/site";
 
@@ -8,8 +7,7 @@ export function Footer() {
     <footer className="bg-slate-panel text-slate-300">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo onDark />
-          <h3 className="mt-6 text-xs font-semibold uppercase tracking-widest text-cyan">Follow us</h3>
+          <h3 className="text-xs font-semibold uppercase tracking-widest text-cyan">Follow us</h3>
           <div className="mt-4"><SocialLinks onDark list /></div>
         </div>
         <div>
@@ -43,6 +41,8 @@ export function Footer() {
       </div>
       <div className="border-t border-slate-800 px-4 py-5 text-center text-xs text-slate-500">
         © ASTRA e - Automation. All rights reserved.
+        <span aria-hidden className="mx-2">·</span>
+        <Link href="/privacy-policy" className="hover:text-cyan">Privacy Policy</Link>
       </div>
     </footer>
   );

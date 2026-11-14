@@ -23,12 +23,10 @@ const BEACONS = [
 export function FirmwareLifecycle() {
   return (
     <Section tone="surface">
-      <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-        <div>
-          <Eyebrow>Firmware cycle &amp; visual telemetry</Eyebrow>
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Deterministic Edge Lifecycle</h2>
-        </div>
-        <p className="max-w-md leading-7 text-slate-600">
+      <div className="max-w-3xl">
+        <Eyebrow>Firmware cycle &amp; visual telemetry</Eyebrow>
+        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Deterministic Edge Lifecycle</h2>
+        <p className="mt-4 text-lg leading-8 text-slate-600">
           How our autonomous micro-controllers execute rapid wake bursts, verify self-test diagnostics, and transition back to micro-amp hibernation.
         </p>
       </div>

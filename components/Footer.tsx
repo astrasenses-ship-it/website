@@ -36,13 +36,16 @@ export function Footer() {
                 <Link href={n.href} className="hover:text-cyan">{n.label}</Link>
               </li>
             ))}
+            <li>
+              <Link href="/privacy-policy" className="hover:text-cyan">Privacy Policy</Link>
+            </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-slate-800 px-4 py-5 text-center text-xs text-slate-500">
         © ASTRA e - Automation. All rights reserved.
         <span aria-hidden className="mx-2">·</span>
-        <Link href="/privacy-policy" className="hover:text-cyan">Privacy Policy</Link>
+        <Link href="/delete-account" className="hover:text-cyan">Delete Account</Link>
       </div>
     </footer>
   );

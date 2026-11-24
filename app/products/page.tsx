@@ -20,32 +20,33 @@ const PRODUCTS = [
     name: "ASTRA Atmos",
     kind: "Ambient sensor",
     sub: "Ambient Wireless Temperature & Humidity Sensor",
-    form: "Minimalist white injection-molded enclosure with ventilation louvers and status RGB LED.",
     best: "Pre-cooling chambers, packing halls, clinical tissue culture labs, and clean rooms.",
     specs: [
       "Dual-channel measurement: relative humidity and temperature",
-      "Temperature range -40 °C to +80 °C, typical accuracy ±0.5 °C",
-      "Humidity range 0% to 100% RH, typical accuracy ±3% RH",
-      "Fully calibrated digital output over I²C",
+      "Interface: I²C digital output (factory-calibrated)",
+      "Temperature range: -40 °C to +80 °C, accuracy ±0.5 °C typical",
+      "Humidity range: 0% to 100% RH, accuracy ±3% RH typical (at 25 °C)",
+      "Enhanced MEMS capacitive humidity element, on-chip temperature sensor and a dedicated ASIC for signal processing",
       "Wide supply voltage: 2.2 V to 5.5 V DC",
       "Excellent long-term stability, fast response and anti-interference capability",
       "32-bit RISC-V SoC",
       "Automatic condensation recovery heating pulse",
       "1 °C and 3% RH alert hysteresis",
+      "Battery protected against over-discharge (cutoff) and over-current",
     ],
     img: "/img/atmos.jpg",
   },
   {
-    name: "ASTRA ThermoProbe-Analog",
+    name: "ASTRA ThermoProbe-Analog (Temperature only)",
     kind: "Probe sensor · Analog",
     sub: "Precision Wireless RTD Probe Sensor",
-    form: "Compact enclosure paired with an industrial high-grade stainless steel RTD external probe.",
     best: "Walk-in chillers, deep-freeze chambers, blast freezers, cold rooms, and immersion tanks.",
     specs: [
       "Precise temperature readings across a range of -70 °C to +300 °C",
       "Precision SPI interface",
       "Built-in Power-On Self-Test (POST)",
       "Continuous deep-sleep power cycle",
+      "Battery protected against over-discharge (cutoff) and over-current",
     ],
     img: "/img/thermoprob.jpg",
   },
@@ -53,15 +54,14 @@ const PRODUCTS = [
     name: "ASTRA ThermoProbe-Digital",
     kind: "Probe sensor · Digital",
     sub: "Digital Wireless Temperature & Humidity Probe Sensor",
-    form: "Compact enclosure paired with a 2 in × 6 mm digital probe on a 1 m cable.",
     best: "Chillers, cold rooms and storage areas that run within 5 °C to 60 °C and 20% to 80% RH.",
     specs: [
       "Dual-channel measurement: temperature and humidity",
-      "Temperature range -10 °C to +70 °C, accuracy ±0.2 °C",
+      "Temperature range -25 °C to +115 °C, accuracy ±0.5 °C",
       "Humidity range 0% to 100% RH, accuracy ±1.8% RH",
       "I2C digital interface (address 0x44)",
       "Operating voltage 1.08 V to 3.6 V DC (typical 3.3 V)",
-      "Recommended operating range 5 °C to 60 °C and 20% to 80% RH",
+      "Battery protected against over-discharge (cutoff) and over-current",
     ],
     img: "/img/thermoprob.jpg",
   },
@@ -145,7 +145,6 @@ export default function Page() {
                 <h3 className="mt-3 text-2xl font-bold">{p.name}</h3>
                 <p className="text-sm font-medium text-cobalt">{p.sub}</p>
                 <dl className="mt-5 space-y-4 text-sm leading-6">
-                  <div><dt className="font-semibold">Form factor</dt><dd className="text-slate-600">{p.form}</dd></div>
                   <div><dt className="font-semibold">Best suited for</dt><dd className="text-slate-600">{p.best}</dd></div>
                 </dl>
                 <h4 className="mt-5 text-xs font-semibold uppercase tracking-widest text-slate-500">Technical specifications</h4>

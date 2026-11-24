@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   experimental: {
     agentFeedback: true,
+    agentUpgrade: "security",
   },
 };
 

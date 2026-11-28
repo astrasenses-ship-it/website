@@ -19,6 +19,7 @@ const PRODUCTS = [
   {
     name: "ASTRA Atmos",
     kind: "Ambient sensor",
+    isNew: true,
     sub: "Ambient Wireless Temperature & Humidity Sensor",
     best: "Pre-cooling chambers, packing halls, clinical tissue culture labs, and clean rooms.",
     specs: [
@@ -34,7 +35,7 @@ const PRODUCTS = [
       "1 °C and 3% RH alert hysteresis",
       "Battery protected against over-discharge (cutoff) and over-current",
     ],
-    img: "/img/atmos.jpg",
+    img: "/img/atmos-photo.jpg",
   },
   {
     name: "ASTRA ThermoProbe-Analog (Temperature only)",
@@ -53,8 +54,9 @@ const PRODUCTS = [
   {
     name: "ASTRA ThermoProbe-Digital",
     kind: "Probe sensor · Digital",
+    isNew: true,
     sub: "Digital Wireless Temperature & Humidity Probe Sensor",
-    best: "Chillers, cold rooms and storage areas that run within 5 °C to 60 °C and 20% to 80% RH.",
+    best: "Cold rooms and storage areas, walk-in chillers, deep-freeze chambers, blast freezers.",
     specs: [
       "Dual-channel measurement: temperature and humidity",
       "Temperature range -25 °C to +115 °C, accuracy ±0.5 °C",
@@ -63,7 +65,7 @@ const PRODUCTS = [
       "Operating voltage 1.08 V to 3.6 V DC (typical 3.3 V)",
       "Battery protected against over-discharge (cutoff) and over-current",
     ],
-    img: "/img/thermoprob.jpg",
+    img: "/img/thermoprobe-digital.jpg",
   },
 ];
 
@@ -139,7 +141,11 @@ export default function Page() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {PRODUCTS.map((p) => (
             <article key={p.name} className="card overflow-hidden">
-              <div className="relative aspect-[16/9] bg-container"><Image src={p.img} alt={`${p.name} wireless sensor`} fill sizes="(min-width:1024px) 33vw, 100vw" className="object-cover" /></div>
+              <div className="relative aspect-[16/9] bg-container"><Image src={p.img} alt={`${p.name} wireless sensor`} fill sizes="(min-width:1024px) 33vw, 100vw" className="object-cover" />
+                {"isNew" in p && p.isNew && (
+                  <span className="absolute left-4 top-4 rounded-full bg-cobalt px-3 py-1 text-xs font-bold uppercase tracking-widest text-white shadow-md">New</span>
+                )}
+              </div>
               <div className="p-6 sm:p-8">
                 <div className="flex flex-wrap items-center gap-2"><Badge>Connected</Badge><span className="text-xs font-semibold uppercase tracking-widest text-slate-500">{p.kind}</span></div>
                 <h3 className="mt-3 text-2xl font-bold">{p.name}</h3>
